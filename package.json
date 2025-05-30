@@ -18,5 +18,9 @@
   "homepage": "https://github.com/basdijkstra/typescript-workshop#readme",
   "dependencies": {
     "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
   }
 }
