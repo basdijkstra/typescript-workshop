@@ -1,0 +1,22 @@
+{
+  "name": "typescript-workshop",
+  "version": "1.0.0",
+  "description": "TypeScript workshop materials",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basdijkstra/typescript-workshop.git"
+  },
+  "author": "Bas Dijkstra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basdijkstra/typescript-workshop/issues"
+  },
+  "homepage": "https://github.com/basdijkstra/typescript-workshop#readme",
+  "dependencies": {
+    "tsx": "^4.19.4"
+  }
+}
