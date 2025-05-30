@@ -22,5 +22,12 @@ describe('Account tests', () => {
     
         expect(account.balance).toEqual(5);
     })
+
+    test('Depositing a negative amount throws expected error', () => {
+
+        let account = new Account('checking');
+
+        expect(() => account.deposit(-10)).toThrowError('Please supply an amount larger than 0');
+    })
 })
 
