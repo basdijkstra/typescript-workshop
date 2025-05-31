@@ -29,5 +29,34 @@ describe('Account tests', () => {
 
         expect(() => account.deposit(-10)).toThrowError('Please supply an amount larger than 0');
     })
+
+    test('Adding interest to a checking account throws expected error', () => {
+
+        let account = new Account('checking');
+
+        expect(() => account.add_interest()).toThrowError('You cannot add interest to a checking account');
+    })
+
+    test('A savings account with a balance under or equal to 100000 gets 1 percent interest', () => {
+
+        let account = new Account('savings');
+
+        account.deposit(100000);
+
+        account.add_interest();
+
+        expect(account.balance).toEqual(101000);
+    })
+
+    test('A savings account with a balance over 100000 gets 2 percent interest', () => {
+
+        let account = new Account('savings');
+
+        account.deposit(120000);
+
+        account.add_interest();
+
+        expect(account.balance).toEqual(122400);
+    })
 })
 

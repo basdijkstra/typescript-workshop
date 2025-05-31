@@ -35,4 +35,18 @@ export class Account {
 
         this._balance += amount;
     }
+
+    public add_interest() {
+
+        if (this._type == 'checking') {
+            throw new Error('You cannot add interest to a checking account');
+        }
+
+        if (this._balance <= 100000) {
+            this._balance *= 1.01;
+        }
+        else {
+            this._balance *= 1.02;
+        }
+    }
 }
