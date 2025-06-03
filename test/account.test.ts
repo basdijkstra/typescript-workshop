@@ -1,4 +1,4 @@
-import { expect, describe, test } from 'vitest';
+import { expect, describe, test, it } from 'vitest';
 import { Account } from '../src/account';
 
 describe('Account tests', () => {
@@ -57,6 +57,27 @@ describe('Account tests', () => {
         account.add_interest();
 
         expect(account.balance).toEqual(122400);
+    })
+
+    describe('Test add_interest() using a parameterized test', () => {
+
+        const testCases : [number, number][] = [
+            [100000, 101000],
+            [120000, 122400]
+        ]
+
+        testCases.forEach(([initialBalance, expectedBalanceAfterInterest]) => {
+            test(`An initial balance of ${initialBalance} should become ${expectedBalanceAfterInterest} after interest`, () => {
+
+                let account = new Account('savings');
+
+                account.deposit(initialBalance);
+
+                account.add_interest();
+
+                expect(account.balance).toEqual(expectedBalanceAfterInterest);
+            })  
+        })
     })
 })
 
