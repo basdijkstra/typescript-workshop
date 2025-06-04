@@ -61,7 +61,8 @@ describe('Account tests', () => {
 
     describe('Test add_interest() using a parameterized test', () => {
 
-        const testCases : [number, number][] = [
+        const testCases : [initialBalance: number, number][] = [
+            [99999, 99909.99],
             [100000, 101000],
             [120000, 122400]
         ]
